@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,7 +18,6 @@ public class UserDAO {
 		
 		String query = "INSERT INTO random_number(dice1, dice2, dice3, timestamp) VALUES(?,?,?,?)";
 		PreparedStatement pstmt = null;
-		int rs = 0;
 		try {
 			pstmt = conn.prepareStatement(query);
 			pstmt.setInt(1, d.get(0).getNumber());
@@ -31,7 +29,7 @@ public class UserDAO {
             
             pstmt.setString(4, sdf.format(dt));
 
-			rs = pstmt.executeUpdate();
+			int rs = pstmt.executeUpdate();
 
 
 		} catch (SQLException ex) {

@@ -6,11 +6,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import DAO.UserDAO;
 
+@CrossOrigin
 @RestController
 public class RandomNumber {
 
