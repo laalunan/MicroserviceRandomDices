@@ -9,6 +9,8 @@ import java.util.Random;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import DAO.UserDAO;
+
 @RestController
 public class RandomNumber {
 
@@ -26,6 +28,10 @@ public class RandomNumber {
 			d.setNumber(r.nextInt(6)+1);
 			dice.add(d);
 		}
+		
+		UserDAO UserDAO = new UserDAO();
+		
+		UserDAO.insertDice(dice);
 		
 		map.put("dice", dice);
 		
