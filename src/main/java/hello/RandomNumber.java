@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import DAO.UserDAO;
-
 @CrossOrigin
 @RestController
 public class RandomNumber {
@@ -31,9 +29,8 @@ public class RandomNumber {
 			dice.add(d);
 		}
 		
-		UserDAO UserDAO = new UserDAO();
-		
-		UserDAO.insertDice(dice);
+/*		UserDAO UserDAO = new UserDAO();	
+		UserDAO.insertDice(dice);*/
 		
 		map.put("dice", dice);
 		
